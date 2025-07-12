@@ -43,6 +43,7 @@
         background-color: burlywood;
         border: 3px solid orange;
         border-radius: 15px;
+        font-size: 3rem;
       }
     </style>
 </head>
@@ -52,16 +53,31 @@
       <h1 class="title">DRUM KIT</h1>
     </div>
     <div class="drums">
-      <div class="a drum">a</div>
-      <div class="b drum">b</div>
-      <div class="c drum">c</div>
-      <div class="d drum">d</div>
-      <div class="e drum">e</div>
-      <div class="f drum">f</div>
+      <div class="a drum container">a</div>
+      <div class="b drum container">b</div>
+      <div class="c drum container">c</div>
+      <div class="d drum container">d</div>
+      <div class="e drum container">e</div>
+      <div class="f drum container">f</div>
     </div>
-
   </main>
-  <!-- difference betweein switch and if statement -->
+
+  <script>
+    document.querySelectorAll('.drum').forEach(drum =>
+      drum.addEventListener('click', () => {
+        const key = drum.classList[0];
+        switch (key) {
+          case 'a': new Audio('drum sounds/D&B Tamb 02.wav').play(); break;
+          case 'b': new Audio('drum sounds/D&B Tamb 01.wav').play(); break;
+          case 'c': new Audio('drum sounds/D&B Snare 03.wav').play(); break;
+          case 'd': new Audio('drum sounds/D&B Snare 02.wav').play(); break;
+          case 'e': new Audio('drum sounds/D&B Snare 01.wav').play(); break;
+          case 'f': new Audio('drum sounds/D&B Kick 03.wav').play(); break;
+        }
+      })
+    );
+  </script>
+
 </body>
 
 </html>
