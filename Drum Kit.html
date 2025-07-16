@@ -1,100 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drum Kit</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-      }
-
-      .container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 3rem;
-      }
-
-      .main {
-        height: 100vh;
-        width: 100%;
-        background-color: #2e2e48;
-      }
-
-      .title {
-        color: white;
-        font-size: 4rem;
-      }
-
-      .drums {
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: 1fr;
-        width: 70%;
-        gap: 1rem;
-      }
-
-      .drum {
-        height: 150px;
-        width: 150px;
-        background-color: burlywood;
-        border: 3px solid orange;
-        border-radius: 15px;
-        font-size: 3rem;
-      }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Drum Kit</title>
+  <style>
+    body { margin: 0; background: #2e2e48; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; color: white; font-family: sans-serif; }
+    .drums { display: flex; gap: 1rem; }
+    .drum { width: 100px; height: 100px; background: burlywood; border: 3px solid orange; border-radius: 10px; font-size: 2rem; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+  </style>
 </head>
 <body>
-  <main class="main container">
-    <div class="title container">
-      <h1 class="title">DRUM KIT</h1>
-    </div>
-    <div class="drums">
-      <div class="a drum container">a</div>
-      <div class="b drum container">b</div>
-      <div class="c drum container">c</div>
-      <div class="d drum container">d</div>
-      <div class="e drum container">e</div>
-      <div class="f drum container">f</div>
-    </div>
-  </main>
+  <h1>DRUM KIT</h1>
+  <div class="drums">
+    <div class="drum" data-key="a">a</div>
+    <div class="drum" data-key="b">b</div>
+    <div class="drum" data-key="c">c</div>
+    <div class="drum" data-key="d">d</div>
+    <div class="drum" data-key="e">e</div>
+    <div class="drum" data-key="f">f</div>
+  </div>
 
   <script>
-    <script>
-  // Function to play the corresponding sound
-  function playSound(key) {
-    switch (key) {
-      case 'a': new Audio('drum sounds/D&B Tamb 02.wav').play(); break;
-      case 'b': new Audio('drum sounds/D&B Tamb 01.wav').play(); break;
-      case 'c': new Audio('drum sounds/D&B Snare 03.wav').play(); break;
-      case 'd': new Audio('drum sounds/D&B Snare 02.wav').play(); break;
-      case 'e': new Audio('drum sounds/D&B Snare 01.wav').play(); break;
-      case 'f': new Audio('drum sounds/D&B Kick 03.wav').play(); break;
+    const sounds = {
+      a: 'drum sounds/D&B Tamb 02.wav',
+      b: 'drum sounds/D&B Tamb 01.wav',
+      c: 'drum sounds/D&B Snare 03.wav',
+      d: 'drum sounds/D&B Snare 02.wav',
+      e: 'drum sounds/D&B Snare 01.wav',
+      f: 'drum sounds/D&B Kick 03.wav'
+    };
+
+    function play(key) {
+      if (sounds[key]) new Audio(sounds[key]).play();
+      else alert("You have pressed a wrong key");
     }
-  }
 
-  // Click event for mouse interaction
-  document.querySelectorAll('.drum').forEach(drum =>
-    drum.addEventListener('click', () => {
-      const key = drum.classList[0];
-      playSound(key);
-    })
-  );
+    document.querySelectorAll('.drum').forEach(btn =>
+      btn.onclick = () => play(btn.dataset.key)
+    );
 
-  // Keydown event for keyboard interaction
-  document.addEventListener('keydown', (event) => {
-    const keyPressed = event.key.toLowerCase();
-    if (['a', 'b', 'c', 'd', 'e', 'f'].includes(keyPressed)) {
-      playSound(keyPressed);
-    }
-  });
-</script>
-
+    document.onkeydown = e => play(e.key.toLowerCase());
   </script>
-
 </body>
-
 </html>
