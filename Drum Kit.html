@@ -63,19 +63,36 @@
   </main>
 
   <script>
-    document.querySelectorAll('.drum').forEach(drum =>
-      drum.addEventListener('click', () => {
-        const key = drum.classList[0];
-        switch (key) {
-          case 'a': new Audio('drum sounds/D&B Tamb 02.wav').play(); break;
-          case 'b': new Audio('drum sounds/D&B Tamb 01.wav').play(); break;
-          case 'c': new Audio('drum sounds/D&B Snare 03.wav').play(); break;
-          case 'd': new Audio('drum sounds/D&B Snare 02.wav').play(); break;
-          case 'e': new Audio('drum sounds/D&B Snare 01.wav').play(); break;
-          case 'f': new Audio('drum sounds/D&B Kick 03.wav').play(); break;
-        }
-      })
-    );
+    <script>
+  // Function to play the corresponding sound
+  function playSound(key) {
+    switch (key) {
+      case 'a': new Audio('drum sounds/D&B Tamb 02.wav').play(); break;
+      case 'b': new Audio('drum sounds/D&B Tamb 01.wav').play(); break;
+      case 'c': new Audio('drum sounds/D&B Snare 03.wav').play(); break;
+      case 'd': new Audio('drum sounds/D&B Snare 02.wav').play(); break;
+      case 'e': new Audio('drum sounds/D&B Snare 01.wav').play(); break;
+      case 'f': new Audio('drum sounds/D&B Kick 03.wav').play(); break;
+    }
+  }
+
+  // Click event for mouse interaction
+  document.querySelectorAll('.drum').forEach(drum =>
+    drum.addEventListener('click', () => {
+      const key = drum.classList[0];
+      playSound(key);
+    })
+  );
+
+  // Keydown event for keyboard interaction
+  document.addEventListener('keydown', (event) => {
+    const keyPressed = event.key.toLowerCase();
+    if (['a', 'b', 'c', 'd', 'e', 'f'].includes(keyPressed)) {
+      playSound(keyPressed);
+    }
+  });
+</script>
+
   </script>
 
 </body>
