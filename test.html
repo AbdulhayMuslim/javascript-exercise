@@ -1,28 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test JS Codes</title>
-    <style>
-        li {
-            text-align: center;
-            list-style: none;
-            font-size: 2rem;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Test JS Codes</title>
+  <style>
+    li {
+      text-align: center;
+      list-style: none;
+      font-size: 2rem;
+    }
+  </style>
 </head>
 <body>
-    <ul>
-        <li>Kabul <input type="checkbox"></li>
-        <li>Parwan <input type="checkbox"></li>
-        <li>Kapisa <input type="checkbox"></li>
-        <li>Nooristan <input type="checkbox"></li>
-        <li>Badakhshan <input type="checkbox"></li>
-        <li>Herat <input type="checkbox"></li>
-    </ul>
-    <script>
+  <ul>
+    <li>Kabul <input type="checkbox"></li>
+    <li>Parwan <input type="checkbox"></li>
+    <li>Kapisa <input type="checkbox"></li>
+    <li>Nooristan <input type="checkbox"></li>
+    <li>Badakhshan <input type="checkbox"></li>
+    <li>Herat <input type="checkbox"></li>
+  </ul>
 
-    </script>
+  <script>
+    var listItems = document.querySelectorAll("li");
+
+    for (var i = 0; i < listItems.length; i++) {
+      let li = listItems[i];
+      let checkbox = li.querySelector("input[type='checkbox']");
+
+      checkbox.addEventListener("change", function () {
+        if (this.checked) {
+          li.style.textDecoration = "line-through";
+        } else {
+          li.style.textDecoration = "none";
+        }
+      });
+    }
+  </script>
 </body>
 </html>
