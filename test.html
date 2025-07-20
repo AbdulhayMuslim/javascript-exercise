@@ -5,38 +5,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Test JS Codes</title>
   <style>
-    li {
+    /* li {
       text-align: center;
       list-style: none;
       font-size: 2rem;
+    } */
+
+    #colorBox {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 150px;
+        width: 150px;
+        background-color: chartreuse;
+        border: 1px solid brown;
+        border-radius: 15px;
+        text-align: center;
+        font-size: 2rem;
     }
   </style>
 </head>
 <body>
-  <ul>
+  <!-- <ul>
     <li>Kabul <input type="checkbox"></li>
     <li>Parwan <input type="checkbox"></li>
     <li>Kapisa <input type="checkbox"></li>
     <li>Nooristan <input type="checkbox"></li>
     <li>Badakhshan <input type="checkbox"></li>
     <li>Herat <input type="checkbox"></li>
-  </ul>
+  </ul> -->
+
+    <div id="colorBox">Click Me</div>
 
   <script>
-    var listItems = document.querySelectorAll("li");
+    // var listItems = document.querySelectorAll("li");
 
-    for (var i = 0; i < listItems.length; i++) {
-      let li = listItems[i];
-      let checkbox = li.querySelector("input[type='checkbox']");
+    // for (var i = 0; i < listItems.length; i++) {
+    //   let li = listItems[i];
+    //   let checkbox = li.querySelector("input[type='checkbox']");
 
-      checkbox.addEventListener("change", function () {
-        if (this.checked) {
-          li.style.textDecoration = "line-through";
-        } else {
-          li.style.textDecoration = "none";
-        }
-      });
+    //   checkbox.addEventListener("change", function () {
+    //     if (this.checked) {
+    //       li.style.textDecoration = "line-through";
+    //     } else {
+    //       li.style.textDecoration = "none";
+    //     }
+    //   });
+    // }
+
+
+    var box = document.getElementById("colorBox");
+    box.addEventListener("click", clicked);
+
+    function clicked () {
+        box.style.color = "#fff";
+        box.style.backgroundColor = "red";
     }
+    
   </script>
 </body>
 </html>
