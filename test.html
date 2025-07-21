@@ -55,13 +55,23 @@
 
 
     var box = document.getElementById("colorBox");
-    box.addEventListener("click", clicked);
 
-    function clicked () {
+    box.addEventListener("click", function () {
+    const toggled = box.classList.toggle("clicked");
+
+    if (toggled) {
+        // Apply clicked state
         box.style.color = "#fff";
         box.style.backgroundColor = "red";
         box.innerHTML = "Box Clicked";
+    } else {
+        // Return to original state
+        box.style.color = "#000"; // or whatever original color
+        box.style.backgroundColor = "chartreuse"; // or your original bg
+        box.innerHTML = "Click Me!";
     }
+    });
+
   </script>
 </body>
 </html>
