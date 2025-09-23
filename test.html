@@ -1,118 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Test JS Codes</title>
-  <style>
-    /* li {
-      text-align: center;
-      list-style: none;
-      font-size: 2rem;
-    } */
-
-    #colorBox {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 150px;
-        width: 150px;
-        background-color: chartreuse;
-        border: 1px solid brown;
-        border-radius: 15px;
-        text-align: center;
-        font-size: 2rem;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS test code</title>
 </head>
 <body>
-  <!-- <ul>
-    <li>Kabul <input type="checkbox"></li>
-    <li>Parwan <input type="checkbox"></li>
-    <li>Kapisa <input type="checkbox"></li>
-    <li>Nooristan <input type="checkbox"></li>
-    <li>Badakhshan <input type="checkbox"></li>
-    <li>Herat <input type="checkbox"></li>
-  </ul> -->
-
-    <!-- <div id="colorBox">Click Me</div> -->
-
-    <h2>Fibonacci Sequence Generator</h2>
-
-  <label for="numInput">Enter a number (n):</label>
-  <input type="number" id="numInput" min="0">
-  <button onclick="generateFibonacci()">Generate</button>
-
-  <p id="result"></p>
+  
 
   <script>
-    // var listItems = document.querySelectorAll("li");
+    var num = Number(prompt("Enter a number: "))
 
-    // for (var i = 0; i < listItems.length; i++) {
-    //   let li = listItems[i];
-    //   let checkbox = li.querySelector("input[type='checkbox']");
-
-    //   checkbox.addEventListener("change", function () {
-    //     if (this.checked) {
-    //       li.style.textDecoration = "line-through";
-    //     } else {
-    //       li.style.textDecoration = "none";
-    //     }
-    //   });
-    // }
-
-
-
-
-    // var box = document.getElementById("colorBox");
-
-    // box.addEventListener("click", function () {
-    // const toggled = box.classList.toggle("clicked");
-
-    // if (toggled) {
-    //     // Apply clicked state
-    //     box.style.color = "#fff";
-    //     box.style.backgroundColor = "red";
-    //     box.innerHTML = "Box Clicked";
-    // } else {
-    //     // Return to original state
-    //     box.style.color = "#000"; // or whatever original color
-    //     box.style.backgroundColor = "chartreuse"; // or your original bg
-    //     box.innerHTML = "Click Me!";
-    // }
-    // });
-
-
-
-    function fibonacci(n) {
-      let a = 0, b = 1;
-
-      if (n === 0) return 0;
-      if (n === 1) return 1;
-
-      for (let i = 2; i <= n; i++) {
-        let temp = a + b;
-        a = b;
-        b = temp;
-      }
-
-      return b;
+    if (num == 0) {
+      alert("0 is either an even or odd number!")
     }
 
-    function generateFibonacci() {
-      const input = document.getElementById("numInput").value;
-      const n = parseInt(input);
-
-      if (isNaN(n) || n < 0) {
-        document.getElementById("result").innerText = "Please enter a valid non-negative number.";
-        return;
-      }
-
-      const result = fibonacci(n);
-      document.getElementById("result").innerText = `Fibonacci number at position ${n} is ${result}.`;
+    else if (num % 2 == 0) {
+      alert(num + " is an even number!")
     }
 
-
+    else {
+      alert(num + " is an odd number!")
+    }
   </script>
 </body>
 </html>
