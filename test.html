@@ -11,17 +11,21 @@
   <script>
     var num = Number(prompt("Enter a number: "))
 
-    if (num == 0) {
-      alert("0 is either an even or odd number!")
-    }
+    num == 0 ? alert("0 is either an even or odd number!") :
+    num % 2 == 0 ? alert(num + " is an even number!") :
+    alert(num + " is ad odd number!")
 
-    else if (num % 2 == 0) {
-      alert(num + " is an even number!")
-    }
+    // if (num == 0) {
+    //   alert("0 is either an even or odd number!")
+    // }
 
-    else {
-      alert(num + " is an odd number!")
-    }
+    // else if (num % 2 == 0) {
+    //   alert(num + " is an even number!")
+    // }
+
+    // else {
+    //   alert(num + " is an odd number!")
+    // }
   </script>
 </body>
 </html>
