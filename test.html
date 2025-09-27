@@ -13,10 +13,20 @@
 
     // console.log(randomNum + "%")
 
-    for (var i = 1; i <= 100; i++) {
-      i % 2 === 0 ? console.log(i) : null
+    // for (var i = 1; i <= 100; i++) {
+    //   i % 2 === 0 ? console.log(i) : null
       
+    // }
+
+    var num = null
+    var sum = 0
+
+    for (var i = 0 ; i < 5 ; i++) {
+      var num = Number(prompt("Enter the " + (i + 1) + " Number:"))
+      sum = sum + num
     }
+
+    alert (sum/5)
   </script>
 </body>
 </html>
