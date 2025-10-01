@@ -18,15 +18,34 @@
       
     // }
 
-    var num = null
+    // var num = null
+    // var sum = 0
+
+    // for (var i = 0 ; i < 5 ; i++) {
+    //   var num = Number(prompt("Enter the " + (i + 1) + " Number:"))
+    //   sum = sum + num
+    // }
+
+    // alert (sum / 5)
+
+    //showing average number using array
+    var userNums = []
+    var userNum = 0
     var sum = 0
 
-    for (var i = 0 ; i < 5 ; i++) {
-      var num = Number(prompt("Enter the " + (i + 1) + " Number:"))
-      sum = sum + num
+    while (userNum != -1) {
+      userNum = Number(prompt("Please Enter a number: \n Or type -1 to finish!"))
+      userNums.push(userNum)
+
+      userNum != -1 ? userNums.push(userNum) : null
     }
 
-    alert (sum/5)
+    for (var i = 0 ; i < userNums.length ; i++) {
+      sum += userNums[i]
+    }
+
+    console.log(userNums)
+    console.log("Average: " + sum / userNums.length)
   </script>
 </body>
 </html>
