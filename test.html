@@ -30,24 +30,59 @@
 
     //showing average number using array
     
-    var obj = [
-    {
-      id: 1,
-      name: 'ahmad',
-      fname: 'mahmood',
-      age: 24,
-      address: 'kabul'
-    },
-    {
-      id: 2,
-      name: 'khalid',
-      fname: 'samsoor',
-      age: 27,
-      address: 'herat'
-    }
-  ]
+  //   var obj = [
+  //   {
+  //     id: 1,
+  //     name: 'ahmad',
+  //     fname: 'mahmood',
+  //     age: 24,
+  //     address: 'kabul'
+  //   },
+  //   {
+  //     id: 2,
+  //     name: 'khalid',
+  //     fname: 'samsoor',
+  //     age: 27,
+  //     address: 'herat'
+  //   }
+  // ]
 
-  console.log(obj[1].age)
+  // console.log(obj[1].age)
+
+
+  var users = []
+
+  var name = prompt("Enter Your Name:")
+  var fname = prompt("Enter Your Father's Name:")
+  var age = Number(prompt("Enter Your Age:"))
+  var address = prompt("Enter Your Address:")
+
+  if (name.length < 3 || name.length > 20) {
+    alert ("Your name should be between 3 and 20 characters!")
+  }
+  else if (fname.length < 3 || fname.length > 20) {
+    alert ("Father's name should be between 3 and 20 characters!")
+  }
+  else if (age < 5 || age > 100) {
+    alert ("Please enter a valid age!")
+  }
+  else if (!address) {
+    alert ("Address can not be empty!")
+  }
+  else {
+    var newUser = {
+      id: users.length + 1,
+      name: name,
+      fname: fname,
+      age: age,
+      address: address
+    }
+
+    users.push(newUser)
+    alert ("New User Added!")
+    console.log(users)
+  }
+  
   </script>
 </body>
 </html>
