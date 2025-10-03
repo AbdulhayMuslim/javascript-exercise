@@ -29,23 +29,24 @@
     // alert (sum / 5)
 
     //showing average number using array
-    var userNums = []
-    var userNum = 0
-    var sum = 0
-
-    while (userNum != -1) {
-      userNum = Number(prompt("Please Enter a number: \n Or type -1 to finish!"))
-      userNums.push(userNum)
-
-      userNum != -1 ? userNums.push(userNum) : null
+    
+    var obj = [
+    {
+      id: 1,
+      name: 'ahmad',
+      fname: 'mahmood',
+      age: 24,
+      address: 'kabul'
+    },
+    {
+      id: 2,
+      name: 'khalid',
+      fname: 'samsoor',
+      age: 27,
+      address: herat
     }
+  ]
 
-    for (var i = 0 ; i < userNums.length ; i++) {
-      sum += userNums[i]
-    }
-
-    console.log(userNums)
-    console.log("Average: " + sum / userNums.length)
   </script>
 </body>
 </html>
