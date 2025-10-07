@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Objects inside an array</title>
+</head>
+<body>
+    <script>
+        var users = []
+
+        var name = prompt("Enter Your Name:")
+        var fname = prompt("Enter Your Father's Name:")
+        var age = Number(prompt("Enter Your Age:"))
+        var address = prompt("Enter Your Address:")
+
+        if (name.length < 3 || name.length > 20) {
+            alert ("Your name should be between 3 and 20 characters!")
+        }
+        else if (fname.length < 3 || fname.length > 20) {
+            alert ("Father's name should be between 3 and 20 characters!")
+        }
+        else if (age < 5 || age > 100) {
+            alert ("Please enter a valid age!")
+        }
+        else if (!address) {
+            alert ("Address can not be empty!")
+        }
+        else {
+            var newUser = {
+            id: users.length + 1,
+            name: name,
+            fname: fname,
+            age: age,
+            address: address
+            }
+
+            users.push(newUser)
+            alert ("New User Added!")
+            console.log(users)
+        }
+    </script>
+</body>
+</html>
