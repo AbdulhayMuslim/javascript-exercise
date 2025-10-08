@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Include Method</title>
+</head>
+<body>
+    <script>
+        var users = ['ahmad', 'mahmood', 'khalid', 'omar', 'samir']
+
+        var user = prompt("Please Enter Your Name: ")
+
+        var login = users.includes(user.toLowerCase())
+
+        if (login == true){
+            alert("Access Granted!")
+        }
+        else {
+            alert("Access Denied!")
+        }
+    </script>
+</body>
+</html>
