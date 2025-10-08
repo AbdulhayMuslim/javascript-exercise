@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Some method</title>
+</head>
+<body>
+    <script>
+        var users = [
+            {id: 1, name: 'khalid', fname: 'saber', age: 23, address: 'kabul'},
+            {id: 2, name: 'mohammad', fname: 'mahmood', age: 19, address: 'herat'},
+            {id: 3, name: 'fahim', fname: 'ashraf', age: 29, address: 'balkh'},
+            {id: 4, name: 'sahil', fname: 'labib', age: 27, address: 'parwan'}
+        ]
+
+        var isUser = users.some(function(user) {
+            return user.name == 'saleem'
+        })
+
+        console.log(isUser)
+    </script>
+</body>
+</html>
