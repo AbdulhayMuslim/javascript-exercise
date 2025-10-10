@@ -8,15 +8,28 @@
 <body>
     <script>
         var allProducts = [
-            {id: 1, name: 'laptop', model: 2022, company: 'dell'}
-            {id: 2, name: 'monitor', model: 2024, company: 'sony'}
-            {id: 3, name: 'mobile', model: 2024, company: 'apple'}
-            {id: 4, name: 'printer', model: 2025, company: 'hp'}
-            {id: 5, name: 'projector', model: 2020, company: 'epson'}
-            {id: 6, name: 'speaker', model: 2021, company: 'jbl'}
-            {id: 7, name: 'keyboard', model: 2019, company: 'logitec'}
-            {id: 8, name: 'mouse', model: 2023, company: 'ogitech'}
+            {id: 1, name: 'laptop', model: 2022, company: 'dell', price: 2200},
+            {id: 2, name: 'monitor', model: 2024, company: 'sony', price: 2250},
+            {id: 3, name: 'mobile', model: 2024, company: 'apple', price: 1220},
+            {id: 4, name: 'printer', model: 2025, company: 'hp', price: 1340},
+            {id: 5, name: 'projector', model: 2020, company: 'epson', price: 590},
+            {id: 6, name: 'speaker', model: 2021, company: 'jbl', price: 1800},
+            {id: 7, name: 'keyboard', model: 2019, company: 'logitec', price: 2310},
+            {id: 8, name: 'mouse', model: 2023, company: 'ogitech', price: 1100}
         ]
+
+        var userProduct = prompt("Enter the product name:")
+
+        var isAvailable = allProducts.some(function(product){
+            return product.name == userProduct
+        })
+
+        if (isAvailable == true) {
+            alert("Product is available!")
+        }
+        else {
+            alert("Product is not available!")
+        }
     </script>
 </body>
 </html>
