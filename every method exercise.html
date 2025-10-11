@@ -8,14 +8,25 @@
 <body>
     <script>
         var members = [
-            {id: 1, name: 'ahmad', surname: 'samadi', age: 23},
-            {id: 2, name: 'kahlid', surname: 'afzali', age: 21},
-            {id: 3, name: 'saboor', surname: 'muradpoor', age: 20},
-            {id: 4, name: 'mohammad', surname: 'mashal', age: 22},
-            {id: 5, name: 'sadiq', surname: 'sarwari', age: 19},
-            {id: 6, name: 'monir', surname: 'sayeedi', age: 18},
-            {id: 7, name: 'fawad', surname: 'mokhtar', age: 24}
+            {id: 1, name: 'ahmad', age: 23},
+            {id: 2, name: 'khalid', age: 21},
+            {id: 3, name: 'saboor', age: 20},
+            {id: 4, name: 'mohammad', age: 22},
+            {id: 5, name: 'sadiq', age: 19},
+            {id: 6, name: 'monir', age: 18},
+            {id: 7, name: 'fawad', age: 24}
         ]
+
+        var join = prompt("Enter Your Name:")
+
+        var authenticate = members.every(function(){
+            if (join == members.name && members.age >= 18) {
+                console.log("Access Granted for " + join + "!")
+            }
+            else {
+                console.log("This meeting is only for members above age 18!")
+            }
+        })
     </script>
 </body>
 </html>
