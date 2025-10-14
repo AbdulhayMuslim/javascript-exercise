@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find the index of an item in an array</title>
+</head>
+<body>
+    <script>
+        var users = [
+            {id: 1, name: 'ahmad', age: 23},
+            {id: 2, name: 'khalid', age: 21},
+            {id: 3, name: 'saboor', age: 17},
+            {id: 4, name: 'mohammad', age: 22},
+            {id: 5, name: 'sadiq', age: 19},
+            {id: 6, name: 'monir', age: 18},
+            {id: 7, name: 'fawad', age: 24}
+        ]
+
+        var findindex = users.findIndex(function(user){
+            return user.name == 'sadiq'
+        })
+
+        console.log(findindex)
+    </script>
+</body>
+</html>
