@@ -10,16 +10,15 @@
         var members = [
             {id: 1, name: 'ahmad', age: 23},
             {id: 2, name: 'khalid', age: 21},
-            {id: 3, name: 'saboor', age: 17},
-            {id: 4, name: 'mohammad', age: 22},
-            {id: 5, name: 'sadiq', age: 19},
+            {id: 3, name: 'saboor', age: 19},
+            {id: 4, name: 'mohammad', age: 27},
+            {id: 5, name: 'sadiq', age: 25},
             {id: 6, name: 'monir', age: 18},
-            {id: 7, name: 'fawad', age: 24}
+            {id: 7, name: 'fawad', age: 31}
         ];
 
         var join = prompt("Enter Your Name:");
 
-        // Find the member with matching name
         var member = members.find(function(m) {
             return m.name.toLowerCase() === join.toLowerCase(); // Case-insensitive match
         });
