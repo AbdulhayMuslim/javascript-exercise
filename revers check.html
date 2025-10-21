@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Palindrome</title>
+</head>
+<body>
+    <script>
+        // Define the function to reverse a string
+        function reverseString(str) {
+            return str.split('').reverse().join('');
+        }
+
+        var word = prompt("Enter a word:");
+
+        if (reverseString(word) === word) {
+            alert("Your word reads forward and backward the same!");
+        } else {
+            alert("Your word does not read the same forward and backward!");
+        }
+    </script>
+</body>
+</html>
