@@ -7,17 +7,17 @@
 </head>
 <body>
     <script>
-        // Define the function to reverse a string
-        function reverseString(str) {
-            return str.split('').reverse().join('');
+        var word = prompt("Enter a word:")
+        
+        function reverseString(str){
+            return str.split('').reverse().join('')
         }
 
-        var word = prompt("Enter a word:");
-
-        if (reverseString(word) === word) {
-            alert("Your word reads forward and backward the same!");
-        } else {
-            alert("Your word does not read the same forward and backward!");
+        if (reverseString(word) == word) {
+            alert("Your word is a palindrome")
+        }
+        else {
+            alert("Your word is not a palindrome")
         }
     </script>
 </body>
