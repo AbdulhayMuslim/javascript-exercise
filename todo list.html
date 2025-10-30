@@ -29,7 +29,14 @@
             console.log("Todo Arrays: ", todoArray)
         }
         else if (userMenu == 2) {
-            alert("delete")
+            // alert("delete")
+            var delItem = prompt("Enter the item you want to delete: ", "")
+            var delObject = todoArray.findIndex(function(item){
+                return item.name == delItem
+            })
+
+            todoArray.splice(delObject, 1)
+            console.log("Todo Array: ", todoArray)
         }
         else if (userMenu == 3) {
             alert("ckeck")
