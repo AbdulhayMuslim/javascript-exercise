@@ -39,7 +39,14 @@
             console.log("Todo Array: ", todoArray)
         }
         else if (userMenu == 3) {
-            alert("ckeck")
+            // alert("ckeck")
+            var checkItem = prompt("Enter the item you want to delete: ", "")
+            todoArray.forEach(function(check){
+                if (check.name == checkItem){
+                    check.isDone = true
+                }
+            })
+            console.log(todoArray)
         }
         else {
             alert("Your entered value is not valid!")
