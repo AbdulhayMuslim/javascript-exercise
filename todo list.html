@@ -7,7 +7,7 @@
 </head>
 <body>
     <script>
-        var todosArray = [
+        var todoArray = [
             {id:1, name:'header', isDone: true},
             {id:2, name:'footer', isDone: false},
             {id:3, name:'homepage', isDone: true},
@@ -17,7 +17,16 @@
         var userMenu = prompt("Please Choose one of the followings: \n 1. Add Task \n 2. Delete Task \n 3. Check Task")
 
         if (userMenu == 1) {
-            alert("add")
+            // alert("add")
+            var newItem = prompt("Enter Your Item Name: ", "")
+            var newObject = {
+                id: todoArray.length + 1,
+                name: newItem,
+                isDone: false
+            }
+
+            todoArray.push(newObject)
+            console.log("Todo Arrays: ", todoArray)
         }
         else if (userMenu == 2) {
             alert("delete")
