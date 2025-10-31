@@ -10,10 +10,17 @@
         var tasks = {
             ahmad: ['english', 'math', 'physics'],
             mohammad: ['admin', 'department head'],
-            khalid: ['IT', 'technical advisor', 'board member']
+            khalid: ['IT', 'technical advisor', 'board member'],
+            sahil: ['Software', 'website', 'database']
         }
 
-        console.log(tasks.mohammad)
+        var newTask = prompt("Enter a new task:")
+        var staff = prompt("Enter the staff name:")
+
+        var staffTask = tasks[staff]
+        staffTask.push(newTask)
+
+        console.log(tasks)
     </script>
 </body>
 </html>
