@@ -14,11 +14,13 @@
             bamyan: ['bamyan', 'foladi', 'bandamir', 'shiber']
         }
 
-        var newdestination = prompt("Enter Your Destination:")
+        var startdestination = prompt("Enter Your Destination:")
 
-        if (newdestination == cities) {
-            console.log(cities.newdestination)
-        }
+        var citydestinations = cities[startdestination]
+
+        citydestinations.forEach(city => {
+            console.log(city)
+        });
     </script>
 </body>
 </html>
