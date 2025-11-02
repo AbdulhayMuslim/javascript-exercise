@@ -15,6 +15,20 @@
             {id: 5, title: 'capital of AFG', answer: 'kabul'},
             {id: 6, title: 'capital of Germany', answer: 'berlin'}
         ]
+
+        var score = 0
+
+        var mainAnswer = ''
+
+        allQuestions.forEach(function(question){
+            mainAnswer = prompt(question.title + ' ?')
+
+            if (mainAnswer == question.answer){
+                score++
+            }
+        })
+
+        alert('Your Final Score: ' + score)
     </script>
 </body>
 </html>
