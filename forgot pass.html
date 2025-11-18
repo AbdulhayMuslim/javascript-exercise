@@ -7,7 +7,27 @@
 </head>
 <body>
     <script>
-        
+        var userData = [
+            {id: 1, username: 'ahmad', pass: '1212', email: 'ahmad@gmail.com'},
+            {id: 2, username: 'mohammad', pass: '1932', email: 'mohammad@gmail.com'},
+            {id: 3, username: 'khalid', pass: '1882', email: 'khalid@gmail.com'},
+            {id: 4, username: 'saleem', pass: '1510', email: 'saleem@gmail.com'},
+            {id: 5, username: 'fahim', pass: '1112', email: 'fahim@gmail.com'},
+            {id: 6, username: 'omar', pass: '1213', email: 'omar@gmail.com'}
+        ]
+
+        var username = prompt("Enter your user name:")
+
+        var mainUserData = userData.find(function(user){
+            return user.username === username
+        })
+
+        if(mainUserData == undefined){
+            alert('You have not signed up in the website')
+        }
+        else{
+            alert('Your password is: ' + mainUserData.pass)
+        }
     </script>
 </body>
 </html>
