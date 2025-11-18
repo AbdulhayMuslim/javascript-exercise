@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer Exercise</title>
+</head>
+<body>
+    <script>
+        var minute = +prompt('Set Minutes:')
+        var second = +prompt('Set Seconds:')
+
+        var timer = setInterval(function(){
+            if (second == -1){
+                minute--
+                second = 59
+            }
+
+            if (minute == 0 && second == 0){
+                clearInterval(timer)
+            }
+
+            console.log('Timer: ' + minute + ' : ' + second)
+            second--
+        }, 1000)
+    </script>
+</body>
+</html>
