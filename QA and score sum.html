@@ -13,13 +13,16 @@
             {id: 3, title: '2**5', answer: '32'},
             {id: 4, title: '200/50', answer: '4'},
             {id: 5, title: 'capital of AFG', answer: 'kabul'},
-            {id: 6, title: 'capital of Germany', answer: 'berlin'}
+            {id: 6, title: 'capital of Germany', answer: 'berlin'},
+            {id: 7, title: 'roof of the world', answer: 'wakhan'},
+            {id: 8, title: 'biggest country', answer: 'russia'}
         ]
 
         var score = 0
 
         var mainAnswer = ''
 
+        //using foreach loop
         allQuestions.forEach(function(question){
             mainAnswer = prompt(question.title + ' ?')
 
