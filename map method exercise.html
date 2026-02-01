@@ -7,13 +7,11 @@
 </head>
 <body>
     <script>
-        let num = [1, 2, 3, 4]
-
-        let cost = num.map(function(n){
-            return n + 10
+        let num = [250, 230, 490, 520, 1200, 1370]
+        let discount = num.map(function(f){
+            return f - (f * 10) / 100
         })
-
-        console.log(cost)
+        console.log(discount)
     </script>
 </body>
 </html>
