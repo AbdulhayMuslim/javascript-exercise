@@ -4,17 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reduce method exercise</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        #products {
+            margin-bottom: 15px;
+        }
+
+        button {
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
+    <h1>Choose your products</h1>
+
+    <div id="products"></div>
+
+    <p>
+        <strong>Total price:</strong>
+        $<span id="total-price">0</span>
+    </p>
+
     <script>
-        products = [
-            {id:1, name: 'laptop', model: 'XPS', company: 'DELL'},
-            {id:1, name: 'laptop', model: 'XPS', company: 'DELL'},
-            {id:1, name: 'laptop', model: 'XPS', company: 'DELL'},
-            {id:1, name: 'laptop', model: 'XPS', company: 'DELL'},
-            {id:1, name: 'laptop', model: 'XPS', company: 'DELL'},
-            {id:1, name: 'laptop', model: 'XPS', company: 'DELL'},
-        ]
+        // List of products with prices
+        const products = [
+            { id: 1, name: 'Laptop',      model: 'XPS',       company: 'DELL',    price: 1200 },
+            { id: 2, name: 'TV',          model: 'Star1',     company: 'Sony',    price: 800 },
+            { id: 3, name: 'Smartphone',  model: 'iPhone 15', company: 'Apple',   price: 1100 },
+            { id: 4, name: 'Fridge',      model: 'XT-1',      company: 'Samsung', price: 900 },
+            { id: 5, name: 'Car',         model: 'Yuang',     company: 'BYD',     price: 25000 },
+            { id: 6, name: 'Robot',       model: 'Optimus',   company: 'Tesla',   price: 50000 },
+        ];
+
+        const productsContainer = document.getElementById('products');
+        const totalPriceSpan = document.getElementById('total-price');
+
+        // Render products with checkboxes so the customer can choose
+        products.forEach(product => {
+            const label = document.createElement('label');
+            const checkbox = document.createElement('input');
+
+            checkbox.type = 'checkbox';
+            checkbox.value = product.id;
+
+            label.appendChild(checkbox);
+            label.appendChild(
+                document.createTextNode(
+                    ` ${product.name} (${product.model} - ${product.company}) - $${product.price}`
+                )
+            );
+
+            const lineBreak = document.createElement('br');
+
+            productsContainer.appendChild(label);
+            productsContainer.appendChild(lineBreak);
+        });
+
+        // Button to calculate total price of selected products
+        const calculateButton = document.createElement('button');
+        calculateButton.textContent = 'Calculate total price';
+        productsContainer.appendChild(calculateButton);
+
+        calculateButton.addEventListener('click', () => {
+            const checkboxes = productsContainer.querySelectorAll('input[type="checkbox"]:checked');
+
+            // Use reduce to sum the prices of selected products
+            const total = Array.from(checkboxes).reduce((sum, checkbox) => {
+                const selectedId = Number(checkbox.value);
+                const product = products.find(p => p.id === selectedId);
+                return sum + (product ? product.price : 0);
+            }, 0);
+
+            totalPriceSpan.textContent = total;
+        });
     </script>
 </body>
 </html>
