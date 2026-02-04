@@ -19,11 +19,15 @@
 
         var userSearch = prompt("Enter username:")
 
-        var userFilter = users.filter(function(user) {
-            return user.name.toLowerCase() == userSearch.toLowerCase()
-        })
+        var userFilter = users.filter(user => user.name.toLowerCase() == userSearch.toLowerCase())
 
-        console.log(userFilter)
+        if (userFilter != 0) {
+            console.log(userFilter)
+        }
+        else {
+            console.log("No match found!")
+        }
+        
     </script>
 </body>
 </html>
