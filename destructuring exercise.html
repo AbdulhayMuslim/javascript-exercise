@@ -6,17 +6,25 @@
     <title>DeStructuring exercise</title>
 </head>
 <body>
-    const user = {
-        id: 42,
-        name: "Riya",
-        contact: {
-          email: "riya@example.com",
-          phone: "9999999999"
-        },
-        settings: {
-          theme: "dark",
-          language: "en"
+    <script>
+        const user = {
+            id: 42,
+            name: "Riya",
+            contact: {
+                email: "riya@example.com",
+                phone: "9999999999"
+            },
+            settings: {
+            theme: "dark",
+            language: "en"
+            }
         }
-      }      
+
+        const {name} = user;
+        const {contact:{email}} = user;
+        const {settings:{theme}} = user;
+        const {settings:{language: lang}} = user;
+    </script>  
+      
 </body>
 </html>
