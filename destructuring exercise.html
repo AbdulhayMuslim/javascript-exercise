@@ -24,6 +24,39 @@
         const {contact:{email}} = user;
         const {settings:{theme}} = user;
         const {settings:{language: lang}} = user;
+        const {timezone = "IST"} = user;
+
+        // second example
+
+        const response = {
+        status: 200,
+        data: {
+            user: {
+            id: 7,
+            profile: {
+                firstName: "Arjun",
+                lastName: "Mehta"
+            }
+            }
+        }
+        };
+
+        const {data:{user:{profile:{firstName}}}} = response;
+        const {data:{user:{profile:{lastName}}}} = response;
+        const {data:{user:{id = userId}}} = response;
+        const {data:{user:{role = 'guest'}}} = response;
+
+        const {
+            data:{
+                user:{
+                    profile:{
+                        firstName, lastName
+                    },
+                    id: userId,
+                    role = 'guest'
+                }
+            }
+        } = response;
     </script>  
       
 </body>
