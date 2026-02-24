@@ -21,12 +21,7 @@
 
         var userFilter = users.filter(user => user.name.toLowerCase() == userSearch.toLowerCase())
 
-        if (userFilter != 0) {
-            console.log(userFilter)
-        }
-        else {
-            console.log("No match found!")
-        }
+        userFilter.length > 0 ? console.log(userFilter) : console.log("no match found!");
         
     </script>
 </body>
