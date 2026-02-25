@@ -17,9 +17,7 @@
 
         var username = prompt("Enter your user name:")
 
-        var mainUserData = userData.find(function(user){
-            return user.username === username
-        })
+        var mainUserData = userData.find(user => user.username === username);
 
         if(mainUserData == undefined){
             alert('You have not signed up in the website')
